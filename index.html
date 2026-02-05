@@ -126,11 +126,35 @@
     </div>
   </section>
 
+  <!-- QR CODE SECTION -->
+  <section class="qr-section">
+    <h2 class="section-title">📱 Scan to Share</h2>
+    <div class="qr-container">
+      <div id="qrcode"></div>
+      <p class="qr-text">Scan this QR code to visit the event page</p>
+      <p class="qr-link">https://selvavinayagam-10.github.io/Stackx/</p>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <h2>STACKX</h2>
     <p>Where ideas stack, and innovation strikes.</p>
   </footer>
+
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    // Generate QR Code
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://selvavinayagam-10.github.io/Stackx/",
+      width: 200,
+      height: 200,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
 
 </body>
 </html>
