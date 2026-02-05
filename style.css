@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #0a0e27, #1a1f3a, #0f2847, #1e3a5f);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   color: #fff;
@@ -14,6 +14,23 @@ body {
   min-height: 100vh;
   padding: 20px;
   overflow-x: hidden;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(0, 150, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(0, 150, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes gradientBG {
@@ -77,9 +94,9 @@ body {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 200, 255, 0.6);
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.8), 0 0 40px rgba(0, 150, 255, 0.4);
   animation: particle-float 20s infinite ease-in-out;
 }
 
@@ -127,17 +144,18 @@ body {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(10, 30, 60, 0.7);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   margin-bottom: 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 150, 255, 0.3), 0 0 80px rgba(0, 150, 255, 0.1);
   transform-style: preserve-3d;
   perspective: 1000px;
   animation: scaleIn 0.8s ease-out;
   position: relative;
   overflow: hidden;
   z-index: 2;
+  border: 2px solid rgba(0, 150, 255, 0.3);
 }
 
 .hero-content {
@@ -147,14 +165,15 @@ body {
 
 .hero-badge {
   display: inline-block;
-  background: rgba(255, 215, 0, 0.2);
-  border: 2px solid #ffd700;
+  background: rgba(0, 150, 255, 0.3);
+  border: 2px solid rgba(0, 200, 255, 0.6);
   padding: 8px 20px;
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 5px;
   animation: float 3s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
 }
 
 .hero-subtitle {
@@ -169,17 +188,18 @@ body {
   font-weight: 900;
   letter-spacing: 10px;
   margin: 20px 0 10px;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3),
-               0 0 20px rgba(255, 255, 255, 0.5),
-               0 0 40px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 4px 10px rgba(0, 150, 255, 0.5),
+               0 0 20px rgba(0, 200, 255, 0.8),
+               0 0 40px rgba(0, 150, 255, 0.5);
   animation: float 3s ease-in-out infinite;
   transform-style: preserve-3d;
-  background: linear-gradient(45deg, #fff, #ffd700, #fff);
+  background: linear-gradient(45deg, #00d4ff, #0096ff, #00f2ff);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: float 3s ease-in-out infinite, gradientText 3s ease infinite;
+  filter: drop-shadow(0 0 30px rgba(0, 150, 255, 0.6));
 }
 
 .hero-year {
@@ -188,6 +208,8 @@ body {
   letter-spacing: 5px;
   margin-bottom: 20px;
   opacity: 0.9;
+  color: #00d4ff;
+  text-shadow: 0 0 20px rgba(0, 200, 255, 0.8);
 }
 
 .hero-info {
@@ -202,18 +224,18 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 100, 200, 0.2);
   padding: 12px 20px;
   border-radius: 50px;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 150, 255, 0.3);
 }
 
 .info-item:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 150, 255, 0.3);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.4), 0 0 30px rgba(0, 200, 255, 0.2);
 }
 
 .info-item .icon {
@@ -227,7 +249,7 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(45deg, transparent, rgba(0, 150, 255, 0.15), transparent);
   animation: shine 3s infinite;
 }
 
@@ -258,8 +280,8 @@ body {
   font-size: 1.1rem;
   margin: 20px 0;
   padding: 15px;
-  background: rgba(255, 215, 0, 0.1);
-  border-left: 4px solid #ffd700;
+  background: rgba(255, 165, 0, 0.15);
+  border-left: 4px solid #ffa726;
   border-radius: 5px;
 }
 
@@ -275,21 +297,21 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 100, 200, 0.15);
   border-radius: 10px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 150, 255, 0.3);
 }
 
 .team-item:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 150, 255, 0.25);
   transform: translateX(10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.4);
 }
 
 .team-label {
   font-weight: 600;
-  color: #ffd700;
+  color: #00d4ff;
   font-size: 1rem;
 }
 
@@ -327,9 +349,9 @@ body {
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, #ffd700, #ff6b6b);
+  background: linear-gradient(180deg, #0096ff, #00d4ff);
   border-radius: 2px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.6), 0 0 40px rgba(0, 200, 255, 0.3);
 }
 
 .timeline-item {
@@ -347,7 +369,7 @@ body {
 .timeline-marker {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #ffd700, #ff6b6b);
+  background: linear-gradient(135deg, #0096ff, #00d4ff);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -355,37 +377,38 @@ body {
   font-size: 1.5rem;
   font-weight: 900;
   color: #fff;
-  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5),
-              0 0 30px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 150, 255, 0.6),
+              0 0 30px rgba(0, 200, 255, 0.5);
   z-index: 10;
   flex-shrink: 0;
   margin: 0 auto;
   transition: all 0.3s ease;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 200, 255, 0.4);
 }
 
 .timeline-item:hover .timeline-marker {
   transform: scale(1.2) rotate(360deg);
-  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.7),
-              0 0 50px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 150, 255, 0.8),
+              0 0 50px rgba(0, 200, 255, 0.6);
 }
 
 .timeline-final .timeline-marker {
   font-size: 1.8rem;
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #ff6b6b, #e73c7e);
+  background: linear-gradient(135deg, #ffa726, #ff6b35);
 }
 
 .timeline-content {
   flex: 1;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(10, 30, 60, 0.5);
   backdrop-filter: blur(10px);
   padding: 25px 30px;
   border-radius: 15px;
   margin: 0 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 150, 255, 0.2);
+  border: 1px solid rgba(0, 150, 255, 0.3);
   transition: all 0.4s ease;
   max-width: 400px;
 }
@@ -402,16 +425,16 @@ body {
 
 .timeline-content:hover {
   transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3),
-              0 0 30px rgba(255, 255, 255, 0.1);
+  background: rgba(10, 50, 100, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 150, 255, 0.4),
+              0 0 30px rgba(0, 200, 255, 0.3);
 }
 
 .timeline-content h3 {
-  color: #ffd700;
+  color: #00d4ff;
   font-size: 1.4rem;
   margin-bottom: 10px;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
 }
 
 .timeline-content p {
@@ -437,14 +460,14 @@ body {
 .timeline-content li:hover {
   opacity: 1;
   transform: translateX(5px);
-  color: #ffd700;
+  color: #00d4ff;
 }
 
 .timeline-content li::before {
   content: "▸";
   position: absolute;
   left: 0;
-  color: #ff6b6b;
+  color: #ffa726;
   font-weight: bold;
 }
 
@@ -453,24 +476,26 @@ body {
   margin: 30px 0;
   opacity: 0.95;
   font-style: italic;
+  color: #ffa726;
+  text-shadow: 0 0 15px rgba(255, 167, 38, 0.4);
 }
 
 .btn {
   display: inline-block;
-  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  background: linear-gradient(135deg, #0096ff, #00d4ff);
   color: #fff;
   padding: 15px 40px;
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 50px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4),
-              inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 150, 255, 0.5),
+              inset 0 -3px 10px rgba(0, 0, 0, 0.3);
   margin-top: 20px;
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(0, 200, 255, 0.5);
 }
 
 .btn::before {
@@ -489,11 +514,11 @@ body {
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #ff5252, #ff6b3d);
+  background: linear-gradient(135deg, #0080ff, #00b8ff);
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6),
-              0 0 30px rgba(255, 107, 107, 0.4),
-              inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 150, 255, 0.7),
+              0 0 30px rgba(0, 200, 255, 0.5),
+              inset 0 -3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn:active {
@@ -502,18 +527,18 @@ body {
 
 /* CARD SECTIONS */
 .card {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(10, 30, 60, 0.6);
   backdrop-filter: blur(10px);
   padding: 30px;
   margin: 30px auto;
   max-width: 900px;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
-              0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 150, 255, 0.2),
+              0 5px 15px rgba(0, 150, 255, 0.15);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 150, 255, 0.3);
   animation: slideInUp 0.6s ease-out;
   z-index: 2;
 }
@@ -525,27 +550,28 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(135deg, rgba(0, 150, 255, 0.1), transparent);
   border-radius: 15px;
   pointer-events: none;
 }
 
 .card:hover {
   transform: translateY(-10px) rotateX(5deg);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
-              0 10px 25px rgba(0, 0, 0, 0.3),
-              0 0 50px rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 150, 255, 0.3),
+              0 10px 25px rgba(0, 150, 255, 0.2),
+              0 0 50px rgba(0, 200, 255, 0.2);
+  background: rgba(10, 50, 100, 0.7);
 }
 
 .card h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(0, 150, 255, 0.4);
   padding-bottom: 10px;
   position: relative;
   display: inline-block;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
 .card h2::after {
@@ -555,7 +581,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #ffd700, #ff6b6b);
+  background: linear-gradient(90deg, #00d4ff, #0096ff);
   transition: width 0.4s ease;
 }
 
@@ -567,9 +593,9 @@ body {
   font-size: 1.5rem;
   margin-top: 25px;
   margin-bottom: 15px;
-  color: #ffd700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
-               2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.6),
+               2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
 
@@ -591,23 +617,23 @@ body {
 
 .card li:hover {
   transform: translateX(5px);
-  color: #ffd700;
+  color: #00d4ff;
 }
 
 .card li:before {
   content: "▸";
   position: absolute;
   left: 0;
-  color: #ff6b6b;
+  color: #ffa726;
   font-weight: bold;
   transition: all 0.3s ease;
-  text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+  text-shadow: 0 0 10px rgba(255, 167, 38, 0.5);
 }
 
 .card li:hover:before {
   transform: translateX(5px) scale(1.2);
-  color: #ffd700;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  color: #00d4ff;
+  text-shadow: 0 0 15px rgba(0, 200, 255, 0.8);
 }
 
 .card p {
@@ -616,7 +642,7 @@ body {
 }
 
 .card b {
-  color: #ffd700;
+  color: #00d4ff;
 }
 
 /* FOOTER */
@@ -624,11 +650,11 @@ footer {
   text-align: center;
   padding: 40px 20px;
   margin-top: 50px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(10, 30, 60, 0.7);
   backdrop-filter: blur(10px);
   border-radius: 15px;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -10px 30px rgba(0, 150, 255, 0.2);
+  border: 1px solid rgba(0, 150, 255, 0.3);
   animation: slideInUp 0.8s ease-out;
   position: relative;
   z-index: 2;
@@ -637,19 +663,20 @@ footer {
 footer h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  background: linear-gradient(45deg, #fff, #ffd700, #ff6b6b, #fff);
+  background: linear-gradient(45deg, #00d4ff, #0096ff, #00f2ff, #00d4ff);
   background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientText 4s ease infinite;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.5));
 }
 
 footer p {
   font-size: 1.1rem;
   opacity: 0.9;
   font-style: italic;
+  color: #ffa726;
 }
 
 /* RESPONSIVE */
@@ -738,5 +765,71 @@ footer p {
 
   .team-value {
     text-align: center;
+  }
+}
+/* QR CODE SECTION */
+.qr-section {
+  max-width: 500px;
+  margin: 60px auto;
+  text-align: center;
+  background: rgba(10, 30, 60, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 150, 255, 0.3), 0 0 60px rgba(0, 150, 255, 0.1);
+  border: 2px solid rgba(0, 150, 255, 0.4);
+  animation: scaleIn 0.6s ease-out;
+}
+
+.qr-section .section-title {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#qrcode {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+}
+
+#qrcode img {
+  display: block;
+}
+
+.qr-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.qr-link {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .qr-section {
+    margin: 40px auto;
+    padding: 30px 20px;
+  }
+  
+  #qrcode {
+    padding: 15px;
   }
 }
